@@ -1,4 +1,4 @@
 WMI is Windows implementation of Web-Based Enterprise Management (WBEM), an enterprise standard for accessing management information across devices. 
 
 In simpler terms, WMI allows administrators to perform standard management tasks that attackers can abuse to perform lateral movement in various ways.
-## Connecting to WMI From Powershell
+**Connecting to WMI From Powershell**
