@@ -10,4 +10,4 @@ $password = 'Mypass123';
 $securePassword = ConvertTo-SecureString $password -AsPlainText -Force;
 $credential = New-Object System.Management.Automation.PSCredential $username, $securePassword;
 ```
-There are two protocols when establishing a WMI session **DCOM** **Wsman**.<br>
+There are two protocols when establishing a WMI session **DCOM** **Wsman**.<br>h
