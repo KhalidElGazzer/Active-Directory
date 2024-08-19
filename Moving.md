@@ -35,3 +35,66 @@ ServiceType = [byte]::Parse("16"); # Win32OwnProcess : Start service in a new pr
 StartMode = "Manual"
 }
 ```
+And then, we can get a handle on the service and start it with the following commands:
+
+```python
+$Service = Get-CimInstance -CimSession $Session -ClassName Win32_Service -filter "Name LIKE 'LOLservice'"
+Invoke-CimMethod -InputObject $Service -MethodName StartService
+```
+Finally, we can stop and delete the service with the following commands:
+```
+Invoke-CimMethod -InputObject $Service -MethodName StopService
+Invoke-CimMethod -InputObject $Service -MethodName Delete
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
