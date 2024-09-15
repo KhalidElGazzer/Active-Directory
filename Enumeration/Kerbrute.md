@@ -4,5 +4,5 @@ Enumerating users allows you to know which user accounts are on the target domai
 <br>
 This will brute force user accounts from a domain controller using a supplied wordlist
 ```
-./kerbrute userenum --dc <DC name> -d <domain name> ~/wordlists/active_directory_users.txt
+./kerbrute userenum --dc <DC name #OR DC ip> -d <domain name> ~/wordlists/active_directory_users.txt
 ```
