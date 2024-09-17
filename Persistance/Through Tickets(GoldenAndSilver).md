@@ -62,3 +62,19 @@ dir \\THMserver1.<DomainName>\c$\
 ```
 
 
+
+**Use the Golden Ticket to access other machine **
+
+
+This will open a new command prompt with elevated privileges to all machines:
+```
+misc::cmd
+```
+You will now have another command prompt with access to all other machines on the network:
+
+```
+dir \\desktop-1\c$
+```
+
+
+
