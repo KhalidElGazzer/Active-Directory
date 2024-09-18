@@ -19,7 +19,7 @@ victim
 CREDS-HARVESTIN$
 ```
  ```
-GetNPUsers.py -dc-ip <DomainController_IP> <domain>/<user> -usersfile <path_to_users_file>
+GetNPUsers.py -dc-ip <DomainController_IP> <domain>/<user> -usersfile <path_to_users_file>   # the '<user>' may be empty if we do not have one.
 ```
 **ex**
 ```
