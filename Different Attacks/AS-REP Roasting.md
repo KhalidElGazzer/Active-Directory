@@ -5,6 +5,11 @@ Is the technique that enables the attacker to retrieve password hashes for AD us
 ![81bf1dad6425f8f06b0026f4e748f193](https://github.com/user-attachments/assets/2ccdf90a-420f-45dd-8c55-8f1142276804)
 
 
+<br>
+Before performming this attack we should edit our /etc/hosts file.
+ 
+<br>
+
 **First method**
 
 
