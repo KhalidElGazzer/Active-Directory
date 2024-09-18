@@ -6,7 +6,8 @@ smbclient -L <target ip>
 ```
 **To list the permissions we have over the shares:**
 ```
-smbmap -u <username> -p <password> -H <target ip>
+smbmap -u <username> -p <password> -H <target ip>   #if we have valid creds
+smbmap -u anonymous -H <target ip>   #if we have anonymous login
 #OR
 crackmapexec smb <target ip> -u <username> -p <password> --shares  #we may did not submit any value to '-p' 
 ```
