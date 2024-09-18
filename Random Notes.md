@@ -10,3 +10,9 @@ crackmapexec smb <target ip>
                                                                   
 SMB         10.10.250.17    445    VULNNET-BC3TCK1  [*] Windows 10.0 Build 17763 x64 (name:VULNNET-BC3TCK1) (domain:vulnnet.local) (signing:True) (SMBv1:False)
 ```
+#OR 
+Use ```enum4linux```:
+```
+enum4linux <target ip>
+```
+----------------------------------------------------------------------------------------------------------------------
