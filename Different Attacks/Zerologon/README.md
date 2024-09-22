@@ -8,6 +8,9 @@ How Zerologon Works:
 We can test if the target vuln or not:
 ```
 python3 zerologon_tester.py <Dc name> <DC ip>
+Performing authentication attempts...
+============================
+Success! DC can be fully compromised by a Zerologon attack.
 ```
 The DC name should be its **NetBIOS** computer name. If this name is not correct, the script will likely fail with a ```STATUS_INVALID_COMPUTER_NAME``` error.<br>
 If vulnarable we could dump all the DC hashes:
