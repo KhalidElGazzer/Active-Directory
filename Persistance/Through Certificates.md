@@ -7,7 +7,7 @@ A Certificate Authority (CA) is an entity that issues and manages digital certif
 
 The private key of the CA is stored on the CA server itself. To extract the private key from a Certificate Authority (CA) in an environment using Active Directory Certificate Services (AD CS), you can use tools like Mimikatz. The private key is stored on the CA server and if this key is not protected by a Hardware Security Module (HSM), Mimikatz can be used to extract the CA certificate and its private key. After gaining access to the CA server via SSH, you can load Mimikatz to perform this extraction.
 <br>
-To dump the DC certs and dump the private keys too:
+To dump the DC certs and the private keys:
 ```
 mimikatz # privilege::debug
 Privilege '20' OK
